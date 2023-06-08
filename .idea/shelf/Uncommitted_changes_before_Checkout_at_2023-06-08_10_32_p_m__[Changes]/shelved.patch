@@ -1,0 +1,33 @@
+Index: For_ForEach_Stream/Stream.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package For_ForEach_Stream;\r\n\r\npublic class Stream {\r\n    public static void filterByEvenElements()\r\n    {\r\n        // create integer array\r\n        Integer[] myArray\r\n                = new Integer[] { 1, 4, 5, 7, 9, 10 };\r\n\r\n        // create a stream and filter by\r\n        // even numbers predicate\r\n        Stream.of(myArray)\r\n                .filter(x -> x % 2 == 0)\r\n                .forEach(System.out::println);\r\n    }\r\n    public static void main(String[] args)\r\n    {\r\n        // filters a stream by even elements\r\n        filterByEvenElements();\r\n        System.out.println(\"======\");\r\n\r\n        // // filters a stream by starting string\r\n        // filterByStartsWith();\r\n        // System.out.println(\"======\");\r\n        //\r\n        // // filters a stream by starting vowel\r\n        // filterByStartsWithVowelsRegex();\r\n    }\r\n\r\n}\r\n
+===================================================================
+diff --git a/For_ForEach_Stream/Stream.java b/For_ForEach_Stream/Stream.java
+--- a/For_ForEach_Stream/Stream.java	
++++ b/For_ForEach_Stream/Stream.java	
+@@ -3,15 +3,15 @@
+ public class Stream {
+     public static void filterByEvenElements()
+     {
+-        // create integer array
+-        Integer[] myArray
+-                = new Integer[] { 1, 4, 5, 7, 9, 10 };
+-
+-        // create a stream and filter by
+-        // even numbers predicate
+-        Stream.of(myArray)
+-                .filter(x -> x % 2 == 0)
+-                .forEach(System.out::println);
++        // // create integer array
++        // Integer[] myArray
++        //         = new Integer[] { 1, 4, 5, 7, 9, 10 };
++        //
++        // // create a stream and filter by
++        // // even numbers predicate
++        // Stream.of(myArray)
++        //         .filter(x -> x % 2 == 0)
++        //         .forEach(System.out::println);
+     }
+     public static void main(String[] args)
+     {
