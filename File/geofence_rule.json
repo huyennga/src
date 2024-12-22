@@ -1,0 +1,66 @@
+{
+  "name": "NAME",
+  "description": "",
+  "isEnabled": true,
+  "isReadOnly": false,
+  "severity": "HIGH",
+  "actions": [{
+    "type": "SEND_EMAIL",
+    "isEnabled": true,
+    "recipients": ["RULE_EMAIL"]
+  }
+  ],
+  "type": "BREAK_GEO_LOC",
+  "stateConditions": [{
+    "includeDeviceGroups": ["*"],
+    "excludeDeviceGroups": [],
+    "type": "DEVICE_GROUP"
+  }
+  ],
+  "eventCondition": {
+    "extraInfo": {
+      "breakGeo": {
+        "inputs": [{
+          "id": "GEOFENCE_ID",
+          "type": "GEO_FENCE"
+        }
+        ],
+        "enterOrLeave": "enter",
+        "inclusive": false
+      }
+    },
+    "queries": [{
+      "logicExpression": {
+        "comparisons": [],
+        "logics": [{
+          "comparisons": [{
+            "fieldName": "eventType",
+            "operator": "EQUALS",
+            "value": "DeviceEnteredItsGeofence",
+            "valueType": "STRING",
+            "elemMatchExpression": null
+          }
+          ],
+          "logics": [],
+          "operator": "AND"
+        }, {
+          "comparisons": [{
+            "fieldName": "object/id",
+            "operator": "CONTAINS",
+            "value": "GEOFENCE_ID",
+            "valueType": "STRING",
+            "elemMatchExpression": null
+          }
+          ],
+          "logics": [],
+          "operator": "AND"
+        }
+        ],
+        "operator": "AND"
+      }
+    }
+    ],
+    "period": 0,
+    "type": "DEVICE"
+  }
+}

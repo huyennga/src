@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import static java.util.List.*;
+
 public class Topic_02_ArrayList {
 
 
@@ -13,7 +15,7 @@ public class Topic_02_ArrayList {
         animal.add("cho");
         animal.add("meo");
         // chen 1 list vao list hien tại
-        animal.addAll(List.of(student));
+        animal.addAll(of(student));
         System.out.println(animal);
 
         animal.add(1, "add them");
